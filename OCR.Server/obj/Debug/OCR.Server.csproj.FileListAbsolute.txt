@@ -11,3 +11,10 @@ C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\obj\Debug\OCR.Server.csproj.CoreC
 C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\obj\Debug\OCR.Server.exe
 C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\obj\Debug\OCR.Server.pdb
 C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\obj\Debug\OCR.Server.csprojResolveAssemblyReference.cache
+D:\Files\Apps\OCR.Server\OCR.Server\bin\Debug\OCR.Server.exe.config
+D:\Files\Apps\OCR.Server\OCR.Server\bin\Debug\OCR.Server.exe
+D:\Files\Apps\OCR.Server\OCR.Server\bin\Debug\OCR.Server.pdb
+D:\Files\Apps\OCR.Server\OCR.Server\obj\Debug\OCR.Server.csprojResolveAssemblyReference.cache
+D:\Files\Apps\OCR.Server\OCR.Server\obj\Debug\OCR.Server.csproj.CoreCompileInputs.cache
+D:\Files\Apps\OCR.Server\OCR.Server\obj\Debug\OCR.Server.exe
+D:\Files\Apps\OCR.Server\OCR.Server\obj\Debug\OCR.Server.pdb
