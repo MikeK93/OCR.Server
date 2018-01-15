@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCR.Server", "OCR.Server\OCR.Server.csproj", "{9BA474B8-F1BE-419A-9F09-AB74131F9867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCR.Engine", "OCR.Engine\OCR.Engine.csproj", "{DF9BD355-E2F6-4F72-9681-50DC80DE2948}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{2DC36CC9-4563-45C8-8538-ABDCD272A849}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrainData", "TrainData", "{0BF1BB64-F920-4579-B4F7-FDD64788684D}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\TrainData\A.txt = Resources\TrainData\A.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BA474B8-F1BE-419A-9F09-AB74131F9867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA474B8-F1BE-419A-9F09-AB74131F9867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA474B8-F1BE-419A-9F09-AB74131F9867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA474B8-F1BE-419A-9F09-AB74131F9867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9BD355-E2F6-4F72-9681-50DC80DE2948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9BD355-E2F6-4F72-9681-50DC80DE2948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9BD355-E2F6-4F72-9681-50DC80DE2948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9BD355-E2F6-4F72-9681-50DC80DE2948}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0BF1BB64-F920-4579-B4F7-FDD64788684D} = {2DC36CC9-4563-45C8-8538-ABDCD272A849}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79F3C660-3B64-45EA-9C4F-6C53FA5A3B05}
+	EndGlobalSection
+EndGlobal

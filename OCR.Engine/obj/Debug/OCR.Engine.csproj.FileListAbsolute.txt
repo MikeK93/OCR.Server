@@ -1,0 +1,6 @@
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Engine_\bin\Debug\OCR.Engine_.dll
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Engine_\bin\Debug\OCR.Engine_.pdb
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Engine_\obj\Debug\OCR.Engine.csprojResolveAssemblyReference.cache
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Engine_\obj\Debug\OCR.Engine.csproj.CoreCompileInputs.cache
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Engine_\obj\Debug\OCR.Engine_.dll
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Engine_\obj\Debug\OCR.Engine_.pdb

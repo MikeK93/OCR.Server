@@ -1,0 +1,13 @@
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\bin\Debug\x64\liblept172.dll
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\bin\Debug\x64\libtesseract304.dll
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\bin\Debug\x86\liblept172.dll
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\bin\Debug\x86\libtesseract304.dll
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\bin\Debug\OCR.Server.exe.config
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\bin\Debug\OCR.Server.exe
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\bin\Debug\OCR.Server.pdb
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\bin\Debug\Tesseract.dll
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\bin\Debug\Tesseract.xml
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\obj\Debug\OCR.Server.csproj.CoreCompileInputs.cache
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\obj\Debug\OCR.Server.exe
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\obj\Debug\OCR.Server.pdb
+C:\Users\Mikhail\Desktop\OCR.Server\OCR.Server\obj\Debug\OCR.Server.csprojResolveAssemblyReference.cache
