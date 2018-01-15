@@ -6,7 +6,6 @@ C:\Users\Mikhail\Desktop\OCR.Server\OCR.Engine_\obj\Debug\OCR.Engine_.dll
 C:\Users\Mikhail\Desktop\OCR.Server\OCR.Engine_\obj\Debug\OCR.Engine_.pdb
 D:\Files\Apps\OCR.Server\OCR.Engine\bin\Debug\OCR.Engine_.dll
 D:\Files\Apps\OCR.Server\OCR.Engine\bin\Debug\OCR.Engine_.pdb
-D:\Files\Apps\OCR.Server\OCR.Engine\obj\Debug\OCR.Engine.csprojResolveAssemblyReference.cache
 D:\Files\Apps\OCR.Server\OCR.Engine\obj\Debug\OCR.Engine.csproj.CoreCompileInputs.cache
 D:\Files\Apps\OCR.Server\OCR.Engine\obj\Debug\OCR.Engine_.dll
 D:\Files\Apps\OCR.Server\OCR.Engine\obj\Debug\OCR.Engine_.pdb
