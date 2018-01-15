@@ -4,12 +4,12 @@ namespace OCR.Engine.Models
 {
     public class Neuron
     {
-        public Neuron(string name, int n, int m) : this(name, n, m, new int[n,m]) { }
-        public Neuron(string name, int n, int m, int[,] weight)
+        public Neuron(char symbol, int n, int m) : this(symbol, n, m, new int[n,m]) { }
+        public Neuron(char symbol, int n, int m, int[,] weight)
         {
             N = n;
             M = m;
-            Name = name ?? throw new ArgumentNullException(nameof(name));
+            Symbol = symbol;
             Weight = weight ?? throw new ArgumentNullException(nameof(weight));
         }
 
@@ -17,7 +17,7 @@ namespace OCR.Engine.Models
 
         public int M { get; }
 
-        public string Name { get; }
+        public char Symbol { get; }
 
         public int[,] Weight { get; }
 
@@ -26,9 +26,9 @@ namespace OCR.Engine.Models
             var sum = 0;
             var scaledSignals = GetScaledSignals(input);
 
-            for (int x = 0; x <= N; x++)
+            for (int x = 0; x < N; x++)
             {
-                for (int y = 0; y <= M; y++)
+                for (int y = 0; y < M; y++)
                 {
                     sum += scaledSignals[x, y];
                 }
@@ -51,5 +51,7 @@ namespace OCR.Engine.Models
 
             return result;
         }
+
+        public override string ToString() => $"{Symbol}";
     }
 }

@@ -43,11 +43,15 @@
   <ItemGroup>
     <Compile Include="Code\NeuronFactory.cs" />
     <Compile Include="Code\NeuronService.cs" />
+    <Compile Include="Code\NeuronRecognizeService.cs" />
     <Compile Include="Code\RecognitionDataConverter.cs" />
+    <Compile Include="Code\TrainDataService.cs" />
     <Compile Include="Constants\RecognitionSettings.cs" />
     <Compile Include="Contracts\INeuronFactory.cs" />
+    <Compile Include="Contracts\INeuronRecognizeService.cs" />
     <Compile Include="Contracts\INeuronService.cs" />
     <Compile Include="Contracts\IRecognitionDataConverter.cs" />
+    <Compile Include="Contracts\ITrainDataService.cs" />
     <Compile Include="Models\Neuron.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

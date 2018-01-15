@@ -1,34 +1,52 @@
-﻿using OCR.Engine.Constants;
+﻿using OCR.Engine.Models;
 using OCR.Engine.Contracts;
-using OCR.Engine.Models;
+using System.IO;
+using System.Text;
+using System;
 
 namespace OCR.Engine.Code
 {
     public class NeuronService : INeuronService
     {
-        public bool IsRecognized(int[,] input, Neuron neuron)
+        private readonly string _weightsDirectory;
+        private readonly INeuronFactory _factory;
+
+        public NeuronService(string weightsDirectory, INeuronFactory factory)
         {
-            return neuron.GetSum(input) >= RecognitionSettings.NeuronSumThreshold;
+            _weightsDirectory = weightsDirectory ?? throw new ArgumentNullException(nameof(weightsDirectory));
+            _factory = factory ?? throw new ArgumentNullException(nameof(factory));
         }
 
-        public void Learn(int[,] input, Neuron neuron)
+        public Neuron Get(char symbol)
         {
-            for (int i = 0; i < neuron.N; i++)
+            using (var file = new FileStream($"{_weightsDirectory}/{symbol}.txt", FileMode.OpenOrCreate))
             {
-                for (int j = 0; j < neuron.M; j++)
-                {
-                    neuron.Weight[i, j] += input[i, j];
-                }
+                return _factory.Create(symbol, file);
             }
         }
 
-        public void Forget(int[,] input, Neuron neuron)
+        public void Save(Neuron neuron)
         {
-            for (int i = 0; i < neuron.N; i++)
+            var builder = new StringBuilder();
+            using (var file = new FileStream($"{_weightsDirectory}/{neuron.Symbol}.txt", FileMode.OpenOrCreate))
+            using (var writer = new StreamWriter(file))
             {
-                for (int j = 0; j < neuron.M; j++)
+                for (int i = 0; i < neuron.N; i++)
                 {
-                    neuron.Weight[i, j] -= input[i, j];
+                    builder.Clear();
+
+                    for (int j = 0; j < neuron.M; j++)
+                    {
+                        builder.Append(neuron.Weight[i, j]);
+                        if (j != neuron.M - 1)
+                        {
+                            builder.Append(" ");
+                        }
+                    }
+
+                    builder.AppendLine();
+
+                    writer.Write(builder.ToString());
                 }
             }
         }

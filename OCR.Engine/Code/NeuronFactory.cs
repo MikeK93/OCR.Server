@@ -3,12 +3,14 @@ using OCR.Engine.Contracts;
 using OCR.Engine.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using OCR.Engine.Constants;
 
 namespace OCR.Engine.Code
 {
     public class NeuronFactory : INeuronFactory
     {
-        public Neuron Create(string name, Stream stream)
+        public Neuron Create(char symbol, Stream stream)
         {
             if (stream == null)
             {
@@ -30,7 +32,12 @@ namespace OCR.Engine.Code
                 }
             }
 
-            var neuron = new Neuron(name, weightsList.Count, weightsList[0].Length);
+            if (!weightsList.Any())
+            {
+                return new Neuron(symbol, RecognitionSettings.DefaultWeightWidth, RecognitionSettings.DefaultWeightHeight);
+            }
+
+            var neuron = new Neuron(symbol, weightsList.Count, weightsList[0].Length);
 
             for (int i = 0; i < weightsList.Count; i++)
             {

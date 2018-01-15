@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OCR.Engine\OCR.Engine.csproj">
+      <Project>{DF9BD355-E2F6-4F72-9681-50DC80DE2948}</Project>
+      <Name>OCR.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

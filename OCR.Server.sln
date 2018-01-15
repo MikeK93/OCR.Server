@@ -10,8 +10,20 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{2DC36CC9-4563-45C8-8538-ABDCD272A849}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrainData", "TrainData", "{0BF1BB64-F920-4579-B4F7-FDD64788684D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Weights", "Weights", "{D01036BB-D66D-4D1D-99AE-7E7643474113}"
 	ProjectSection(SolutionItems) = preProject
-		Resources\TrainData\A.txt = Resources\TrainData\A.txt
+		Resources\TrainData\Weights\A.txt = Resources\TrainData\Weights\A.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{E233313B-59A6-4685-B601-64A8CE059ED4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A", "A", "{F8337D44-94D0-49EE-8008-D2572DADD476}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\TrainData\Samples\A\0.jpg = Resources\TrainData\Samples\A\0.jpg
+		Resources\TrainData\Samples\A\1.jpg = Resources\TrainData\Samples\A\1.jpg
+		Resources\TrainData\Samples\A\2.jpg = Resources\TrainData\Samples\A\2.jpg
+		Resources\TrainData\Samples\A\3.jpg = Resources\TrainData\Samples\A\3.jpg
 	EndProjectSection
 EndProject
 Global
@@ -34,6 +46,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0BF1BB64-F920-4579-B4F7-FDD64788684D} = {2DC36CC9-4563-45C8-8538-ABDCD272A849}
+		{D01036BB-D66D-4D1D-99AE-7E7643474113} = {0BF1BB64-F920-4579-B4F7-FDD64788684D}
+		{E233313B-59A6-4685-B601-64A8CE059ED4} = {0BF1BB64-F920-4579-B4F7-FDD64788684D}
+		{F8337D44-94D0-49EE-8008-D2572DADD476} = {E233313B-59A6-4685-B601-64A8CE059ED4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79F3C660-3B64-45EA-9C4F-6C53FA5A3B05}

@@ -5,6 +5,6 @@ namespace OCR.Engine.Contracts
 {
     public interface INeuronFactory
     {
-        Neuron Create(string name, Stream stream);
+        Neuron Create(char symbol, Stream stream);
     }
 }
