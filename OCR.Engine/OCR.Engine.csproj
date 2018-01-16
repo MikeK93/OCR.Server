@@ -7,8 +7,8 @@
     <ProjectGuid>{DF9BD355-E2F6-4F72-9681-50DC80DE2948}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OCR.Engine_</RootNamespace>
-    <AssemblyName>OCR.Engine_</AssemblyName>
+    <RootNamespace>OCR.Engine</RootNamespace>
+    <AssemblyName>OCR.Engine</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

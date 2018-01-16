@@ -1,9 +1,9 @@
 # VS
-/[bB]in/**/*
-/[Oo]bj/**/*
-.sqlite
-.suo
-.ide
+*.suo
+*.user
+bin
+obj
+packages
 
 # fastlane
 #
