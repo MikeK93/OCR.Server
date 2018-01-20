@@ -1,4 +1,5 @@
-﻿using OCR.Engine.Contracts;
+﻿using OCR.Engine.Code.Logging;
+using OCR.Engine.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,6 +9,7 @@ namespace OCR.Engine.Code
 {
     public class TrainDataService : ITrainDataService
     {
+        private static readonly ILog _logger = LogManager.GetLogger();
         private readonly string _trainDataDirectory;
         private readonly IRecognitionDataConverter _recognitionDataConverter;
 
@@ -21,9 +23,11 @@ namespace OCR.Engine.Code
         {
             var directory = GetTrainDataDirectory(symbol);
 
-            foreach (var trainSample in Directory.EnumerateFiles(directory))
-            { 
-                var image = new Bitmap(trainSample);
+            foreach (var trainSamplePath in Directory.EnumerateFiles(directory))
+            {
+                _logger.Info($"Preparing image sample [{trainSamplePath}].");
+
+                var image = new Bitmap(trainSamplePath);
 
                 yield return _recognitionDataConverter.ToArray(image);
             }

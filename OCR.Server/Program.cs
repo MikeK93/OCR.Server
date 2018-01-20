@@ -1,4 +1,5 @@
 ﻿using OCR.Engine.Code;
+using OCR.Engine.Code.Logging;
 using OCR.Engine.Models;
 using System;
 
@@ -11,6 +12,8 @@ namespace OCR.Server
             var trainDataDirectory = @"D:\Files\Apps\OCR.Server\Resources\TrainData\Samples";
             var weightDirectory = @"D:\Files\Apps\OCR.Server\Resources\TrainData\Weights";
 
+            LogManager.RegisterLogger(new ConsoleLogger());
+
             var factory = new NeuronFactory();
             var service = new NeuronService(weightDirectory, factory);
 
@@ -20,12 +23,16 @@ namespace OCR.Server
             var trainDataService = new TrainDataService(trainDataDirectory, converter);
 
             var neuronA = service.Get('A');
-
-
+            
             foreach (var trainData in trainDataService.Get('A'))
             {
                 Recognize(trainData, neuronA);
             }
+
+            service.Save(neuronA);
+
+            Console.WriteLine("Done");
+            Console.ReadLine();
 
             void Recognize(int[,] trainData, Neuron neuron)
             {
@@ -41,7 +48,7 @@ namespace OCR.Server
                     return;
                 }
 
-                Console.WriteLine($"Hm... cannot figure out [{neuron.Symbol}]. Lern {neuron.Symbol}? [y/n]");
+                Console.WriteLine($"Hm... cannot figure out [{neuron.Symbol}]. Is it {neuron.Symbol}? [y/n]");
                 if (Console.ReadLine() == "y")
                 {
                     recongizeService.Learn(trainData, neuron);

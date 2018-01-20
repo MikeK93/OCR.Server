@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Logging\EmptyLogger.cs" />
+    <Compile Include="Code\Logging\LogManager.cs" />
     <Compile Include="Code\NeuronFactory.cs" />
     <Compile Include="Code\NeuronService.cs" />
     <Compile Include="Code\NeuronRecognizeService.cs" />
     <Compile Include="Code\RecognitionDataConverter.cs" />
     <Compile Include="Code\TrainDataService.cs" />
     <Compile Include="Constants\RecognitionSettings.cs" />
+    <Compile Include="Contracts\ILog.cs" />
     <Compile Include="Contracts\INeuronFactory.cs" />
     <Compile Include="Contracts\INeuronRecognizeService.cs" />
     <Compile Include="Contracts\INeuronService.cs" />
@@ -55,5 +58,6 @@
     <Compile Include="Models\Neuron.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

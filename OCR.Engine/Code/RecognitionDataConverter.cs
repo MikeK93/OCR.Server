@@ -1,6 +1,6 @@
-﻿using System.Drawing;
-using OCR.Engine.Contracts;
+﻿using OCR.Engine.Contracts;
 using System;
+using System.Drawing;
 
 namespace OCR.Engine.Code
 {
@@ -14,12 +14,12 @@ namespace OCR.Engine.Code
             }
 
             var toRecognize = new int[image.Width, image.Height];
-            
+
             for (int x = 0; x < image.Width; x++)
             {
                 for (int y = 0; y < image.Height; y++)
                 {
-                    toRecognize[x, y] = image.GetPixel(x, y).R >= 250 ? 0 : 1;
+                    toRecognize[x, y] = image.GetPixel(y, x).R <= 15 ? 1 : 0;
                 }
             }
 

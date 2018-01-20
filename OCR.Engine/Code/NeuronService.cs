@@ -3,11 +3,13 @@ using OCR.Engine.Contracts;
 using System.IO;
 using System.Text;
 using System;
+using OCR.Engine.Code.Logging;
 
 namespace OCR.Engine.Code
 {
     public class NeuronService : INeuronService
     {
+        private static readonly ILog _logger = LogManager.GetLogger();
         private readonly string _weightsDirectory;
         private readonly INeuronFactory _factory;
 
@@ -27,6 +29,7 @@ namespace OCR.Engine.Code
 
         public void Save(Neuron neuron)
         {
+            _logger.Info($"Saving neuron [{neuron.Symbol}]");
             var builder = new StringBuilder();
             using (var file = new FileStream($"{_weightsDirectory}/{neuron.Symbol}.txt", FileMode.OpenOrCreate))
             using (var writer = new StreamWriter(file))
@@ -37,7 +40,7 @@ namespace OCR.Engine.Code
 
                     for (int j = 0; j < neuron.M; j++)
                     {
-                        builder.Append(neuron.Weight[i, j]);
+                        builder.Append($"{neuron.Weight[i, j]}");
                         if (j != neuron.M - 1)
                         {
                             builder.Append(" ");
