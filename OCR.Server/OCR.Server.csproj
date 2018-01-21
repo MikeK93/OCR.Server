@@ -51,9 +51,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OCR.Common\OCR.Common.csproj">
+      <Project>{f3535ec4-8e22-49fd-b94c-26e3a6a67672}</Project>
+      <Name>OCR.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OCR.DataAccess\OCR.DataAccess.csproj">
+      <Project>{DD53B005-AC67-47F4-B22F-900AB7BDD108}</Project>
+      <Name>OCR.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OCR.Engine\OCR.Engine.csproj">
       <Project>{DF9BD355-E2F6-4F72-9681-50DC80DE2948}</Project>
       <Name>OCR.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OCR.Graphics\OCR.Graphics.csproj">
+      <Project>{25F30E15-D9C3-45DE-A4EC-2E5432EBED05}</Project>
+      <Name>OCR.Graphics</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿using OCR.Engine.Contracts;
+﻿using OCR.Common.Contracts;
 using System;
 
 namespace OCR.Server

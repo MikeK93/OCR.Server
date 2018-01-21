@@ -1,5 +1,7 @@
-﻿using OCR.Engine.Code.Logging;
+﻿using OCR.Common.Code.Logging;
+using OCR.Common.Contracts;
 using OCR.Engine.Contracts;
+using OCR.Graphics.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -32,7 +34,7 @@ namespace OCR.Engine.Code
                 yield return _recognitionDataConverter.ToArray(image);
             }
         }
-
+        
         private string GetTrainDataDirectory(char symbol)
         {
             if (!Directory.Exists(_trainDataDirectory))

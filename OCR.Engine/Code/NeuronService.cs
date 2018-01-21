@@ -3,7 +3,9 @@ using OCR.Engine.Contracts;
 using System.IO;
 using System.Text;
 using System;
-using OCR.Engine.Code.Logging;
+using OCR.Common.Contracts;
+using OCR.Common.Code.Logging;
+using OCR.DataAccess.Contracts;
 
 namespace OCR.Engine.Code
 {
@@ -12,11 +14,13 @@ namespace OCR.Engine.Code
         private static readonly ILog _logger = LogManager.GetLogger();
         private readonly string _weightsDirectory;
         private readonly INeuronFactory _factory;
+        private readonly INeuronWriter _writer;
 
-        public NeuronService(string weightsDirectory, INeuronFactory factory)
+        public NeuronService(string weightsDirectory, INeuronFactory factory, INeuronWriter writer)
         {
             _weightsDirectory = weightsDirectory ?? throw new ArgumentNullException(nameof(weightsDirectory));
             _factory = factory ?? throw new ArgumentNullException(nameof(factory));
+            _writer = writer ?? throw new ArgumentNullException(nameof(writer));
         }
 
         public Neuron Get(char symbol)
@@ -30,28 +34,8 @@ namespace OCR.Engine.Code
         public void Save(Neuron neuron)
         {
             _logger.Info($"Saving neuron [{neuron.Symbol}]");
-            var builder = new StringBuilder();
-            using (var file = new FileStream($"{_weightsDirectory}/{neuron.Symbol}.txt", FileMode.OpenOrCreate))
-            using (var writer = new StreamWriter(file))
-            {
-                for (int i = 0; i < neuron.N; i++)
-                {
-                    builder.Clear();
 
-                    for (int j = 0; j < neuron.M; j++)
-                    {
-                        builder.Append($"{neuron.Weight[i, j]}");
-                        if (j != neuron.M - 1)
-                        {
-                            builder.Append(" ");
-                        }
-                    }
-
-                    builder.AppendLine();
-
-                    writer.Write(builder.ToString());
-                }
-            }
+            _writer.WriteTo($"{_weightsDirectory}/{neuron.Symbol}.txt", neuron.Weight);
         }
     }
 }

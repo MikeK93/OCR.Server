@@ -1,5 +1,6 @@
-﻿using OCR.Engine.Code.Logging;
-using OCR.Engine.Constants;
+﻿using OCR.Common.Code.Logging;
+using OCR.Common.Contracts;
+using OCR.Common.Constants;
 using OCR.Engine.Contracts;
 using OCR.Engine.Models;
 

@@ -41,23 +41,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\Logging\EmptyLogger.cs" />
-    <Compile Include="Code\Logging\LogManager.cs" />
     <Compile Include="Code\NeuronFactory.cs" />
     <Compile Include="Code\NeuronService.cs" />
     <Compile Include="Code\NeuronRecognizeService.cs" />
-    <Compile Include="Code\RecognitionDataConverter.cs" />
     <Compile Include="Code\TrainDataService.cs" />
-    <Compile Include="Constants\RecognitionSettings.cs" />
-    <Compile Include="Contracts\ILog.cs" />
     <Compile Include="Contracts\INeuronFactory.cs" />
     <Compile Include="Contracts\INeuronRecognizeService.cs" />
     <Compile Include="Contracts\INeuronService.cs" />
-    <Compile Include="Contracts\IRecognitionDataConverter.cs" />
     <Compile Include="Contracts\ITrainDataService.cs" />
     <Compile Include="Models\Neuron.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OCR.Common\OCR.Common.csproj">
+      <Project>{F3535EC4-8E22-49FD-B94C-26E3A6A67672}</Project>
+      <Name>OCR.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OCR.DataAccess\OCR.DataAccess.csproj">
+      <Project>{DD53B005-AC67-47F4-B22F-900AB7BDD108}</Project>
+      <Name>OCR.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OCR.Graphics\OCR.Graphics.csproj">
+      <Project>{25F30E15-D9C3-45DE-A4EC-2E5432EBED05}</Project>
+      <Name>OCR.Graphics</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
