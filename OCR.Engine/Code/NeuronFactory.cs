@@ -4,7 +4,7 @@ using OCR.Engine.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using OCR.Engine.Constants;
+using OCR.Common.Constants;
 
 namespace OCR.Engine.Code
 {

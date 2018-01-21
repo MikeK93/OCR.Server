@@ -13,7 +13,77 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrainData", "TrainData", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Weights", "Weights", "{D01036BB-D66D-4D1D-99AE-7E7643474113}"
 	ProjectSection(SolutionItems) = preProject
+		Resources\TrainData\Weights\#.txt = Resources\TrainData\Weights\#.txt
+		Resources\TrainData\Weights\%.txt = Resources\TrainData\Weights\%.txt
+		Resources\TrainData\Weights\&.txt = Resources\TrainData\Weights\&.txt
+		Resources\TrainData\Weights\(.txt = Resources\TrainData\Weights\(.txt
+		Resources\TrainData\Weights\).txt = Resources\TrainData\Weights\).txt
+		Resources\TrainData\Weights\+.txt = Resources\TrainData\Weights\+.txt
+		Resources\TrainData\Weights\0.txt = Resources\TrainData\Weights\0.txt
+		Resources\TrainData\Weights\1.txt = Resources\TrainData\Weights\1.txt
+		Resources\TrainData\Weights\2.txt = Resources\TrainData\Weights\2.txt
+		Resources\TrainData\Weights\3.txt = Resources\TrainData\Weights\3.txt
+		Resources\TrainData\Weights\4.txt = Resources\TrainData\Weights\4.txt
+		Resources\TrainData\Weights\5.txt = Resources\TrainData\Weights\5.txt
+		Resources\TrainData\Weights\6.txt = Resources\TrainData\Weights\6.txt
+		Resources\TrainData\Weights\7.txt = Resources\TrainData\Weights\7.txt
+		Resources\TrainData\Weights\8.txt = Resources\TrainData\Weights\8.txt
+		Resources\TrainData\Weights\9.txt = Resources\TrainData\Weights\9.txt
+		Resources\TrainData\Weights\@.txt = Resources\TrainData\Weights\@.txt
+		Resources\TrainData\Weights\^.txt = Resources\TrainData\Weights\^.txt
+		Resources\TrainData\Weights\A-cap.txt = Resources\TrainData\Weights\A-cap.txt
 		Resources\TrainData\Weights\A.txt = Resources\TrainData\Weights\A.txt
+		Resources\TrainData\Weights\asterisk.txt = Resources\TrainData\Weights\asterisk.txt
+		Resources\TrainData\Weights\B-cap.txt = Resources\TrainData\Weights\B-cap.txt
+		Resources\TrainData\Weights\b.txt = Resources\TrainData\Weights\b.txt
+		Resources\TrainData\Weights\C-cap.txt = Resources\TrainData\Weights\C-cap.txt
+		Resources\TrainData\Weights\c.txt = Resources\TrainData\Weights\c.txt
+		Resources\TrainData\Weights\D-cap.txt = Resources\TrainData\Weights\D-cap.txt
+		Resources\TrainData\Weights\d.txt = Resources\TrainData\Weights\d.txt
+		Resources\TrainData\Weights\E-cap.txt = Resources\TrainData\Weights\E-cap.txt
+		Resources\TrainData\Weights\e.txt = Resources\TrainData\Weights\e.txt
+		Resources\TrainData\Weights\F-cap.txt = Resources\TrainData\Weights\F-cap.txt
+		Resources\TrainData\Weights\f.txt = Resources\TrainData\Weights\f.txt
+		Resources\TrainData\Weights\G-cap.txt = Resources\TrainData\Weights\G-cap.txt
+		Resources\TrainData\Weights\g.txt = Resources\TrainData\Weights\g.txt
+		Resources\TrainData\Weights\H-cap.txt = Resources\TrainData\Weights\H-cap.txt
+		Resources\TrainData\Weights\h.txt = Resources\TrainData\Weights\h.txt
+		Resources\TrainData\Weights\J-cap.txt = Resources\TrainData\Weights\J-cap.txt
+		Resources\TrainData\Weights\J.txt = Resources\TrainData\Weights\J.txt
+		Resources\TrainData\Weights\K-cap.txt = Resources\TrainData\Weights\K-cap.txt
+		Resources\TrainData\Weights\k.txt = Resources\TrainData\Weights\k.txt
+		Resources\TrainData\Weights\L-cap.txt = Resources\TrainData\Weights\L-cap.txt
+		Resources\TrainData\Weights\M-cap.txt = Resources\TrainData\Weights\M-cap.txt
+		Resources\TrainData\Weights\m.txt = Resources\TrainData\Weights\m.txt
+		Resources\TrainData\Weights\N-cap.txt = Resources\TrainData\Weights\N-cap.txt
+		Resources\TrainData\Weights\n.txt = Resources\TrainData\Weights\n.txt
+		Resources\TrainData\Weights\O-cap.txt = Resources\TrainData\Weights\O-cap.txt
+		Resources\TrainData\Weights\o.txt = Resources\TrainData\Weights\o.txt
+		Resources\TrainData\Weights\P-cap.txt = Resources\TrainData\Weights\P-cap.txt
+		Resources\TrainData\Weights\p.txt = Resources\TrainData\Weights\p.txt
+		Resources\TrainData\Weights\Q-cap.txt = Resources\TrainData\Weights\Q-cap.txt
+		Resources\TrainData\Weights\q.txt = Resources\TrainData\Weights\q.txt
+		Resources\TrainData\Weights\QM.txt = Resources\TrainData\Weights\QM.txt
+		Resources\TrainData\Weights\R-cap.txt = Resources\TrainData\Weights\R-cap.txt
+		Resources\TrainData\Weights\r.txt = Resources\TrainData\Weights\r.txt
+		Resources\TrainData\Weights\S-cap.txt = Resources\TrainData\Weights\S-cap.txt
+		Resources\TrainData\Weights\s.txt = Resources\TrainData\Weights\s.txt
+		Resources\TrainData\Weights\T-cap.txt = Resources\TrainData\Weights\T-cap.txt
+		Resources\TrainData\Weights\t.txt = Resources\TrainData\Weights\t.txt
+		Resources\TrainData\Weights\U-cap.txt = Resources\TrainData\Weights\U-cap.txt
+		Resources\TrainData\Weights\u.txt = Resources\TrainData\Weights\u.txt
+		Resources\TrainData\Weights\V-cap.txt = Resources\TrainData\Weights\V-cap.txt
+		Resources\TrainData\Weights\v.txt = Resources\TrainData\Weights\v.txt
+		Resources\TrainData\Weights\W-cap.txt = Resources\TrainData\Weights\W-cap.txt
+		Resources\TrainData\Weights\w.txt = Resources\TrainData\Weights\w.txt
+		Resources\TrainData\Weights\X-cap.txt = Resources\TrainData\Weights\X-cap.txt
+		Resources\TrainData\Weights\x.txt = Resources\TrainData\Weights\x.txt
+		Resources\TrainData\Weights\Y-cap.txt = Resources\TrainData\Weights\Y-cap.txt
+		Resources\TrainData\Weights\y.txt = Resources\TrainData\Weights\y.txt
+		Resources\TrainData\Weights\Z-cap.txt = Resources\TrainData\Weights\Z-cap.txt
+		Resources\TrainData\Weights\z.txt = Resources\TrainData\Weights\z.txt
+		Resources\TrainData\Weights\{.txt = Resources\TrainData\Weights\{.txt
+		Resources\TrainData\Weights\}.txt = Resources\TrainData\Weights\}.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{E233313B-59A6-4685-B601-64A8CE059ED4}"
@@ -25,6 +95,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A", "A", "{F8337D44-94D0-49
 		Resources\TrainData\Samples\A\2.jpg = Resources\TrainData\Samples\A\2.jpg
 		Resources\TrainData\Samples\A\3.jpg = Resources\TrainData\Samples\A\3.jpg
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCR.Common", "OCR.Common\OCR.Common.csproj", "{F3535EC4-8E22-49FD-B94C-26E3A6A67672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCR.Graphics", "OCR.Graphics\OCR.Graphics.csproj", "{25F30E15-D9C3-45DE-A4EC-2E5432EBED05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCR.DataAccess", "OCR.DataAccess\OCR.DataAccess.csproj", "{DD53B005-AC67-47F4-B22F-900AB7BDD108}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +116,18 @@ Global
 		{DF9BD355-E2F6-4F72-9681-50DC80DE2948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF9BD355-E2F6-4F72-9681-50DC80DE2948}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF9BD355-E2F6-4F72-9681-50DC80DE2948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3535EC4-8E22-49FD-B94C-26E3A6A67672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3535EC4-8E22-49FD-B94C-26E3A6A67672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3535EC4-8E22-49FD-B94C-26E3A6A67672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3535EC4-8E22-49FD-B94C-26E3A6A67672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25F30E15-D9C3-45DE-A4EC-2E5432EBED05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F30E15-D9C3-45DE-A4EC-2E5432EBED05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F30E15-D9C3-45DE-A4EC-2E5432EBED05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F30E15-D9C3-45DE-A4EC-2E5432EBED05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD53B005-AC67-47F4-B22F-900AB7BDD108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD53B005-AC67-47F4-B22F-900AB7BDD108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD53B005-AC67-47F4-B22F-900AB7BDD108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD53B005-AC67-47F4-B22F-900AB7BDD108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

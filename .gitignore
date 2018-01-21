@@ -1,8 +1,8 @@
 # VS
 *.suo
 *.user
-bin
-obj
+[Bb]in/
+[Oo]bj/
 packages
 
 # fastlane
