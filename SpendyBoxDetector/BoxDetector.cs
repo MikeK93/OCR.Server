@@ -8,6 +8,16 @@ using System.Threading.Tasks;
 
 namespace TextRecognition
 {
+
+    public class BoxDetectorArgs
+    {
+       public  Action<Pixel[,], Box> BoxDetectCallback { get; set; }
+       public  int MinHeight { get; set; }
+       public int MinWidth { get; set; }
+       public int MaxWidth { get; set; }
+       public int MaxHeight { get; set; }
+       public bool AndFilterStrategy { get; set; }
+    }
     public class BoxDetector
     {
         public BoxDetector()
@@ -16,8 +26,10 @@ namespace TextRecognition
         }
 
         
-        public IEnumerable<Box> GetBoxes(Pixel[,] pixels)
+        public IEnumerable<Box> GetBoxes(Pixel[,] pixels,BoxDetectorArgs args)
         {
+            if (args == null)
+                throw new ArgumentNullException();
             var sw = new Stopwatch();
             ConcurrentQueue<Box> Boxes = new ConcurrentQueue<Box>();
             List<Box> boxesForChecking = new List<Box>();
@@ -25,28 +37,29 @@ namespace TextRecognition
             var width = pixels.GetLength(0);
             var height = pixels.GetLength(1);
             var startRemovingFrom = 0;
-            for (int i = 0; i < pixels.GetLength(0); i++)
+            for (int j = 0; j < pixels.GetLength(1);j++)
             {
-                
-                if (startRemovingFrom <= i)
+   
+                if (startRemovingFrom <= j)
                 {
                     if(boxesForChecking.Any())
                     {
-                        startRemovingFrom = width;
+                        startRemovingFrom = height;
                         foreach (var box in boxesForChecking.ToList())
                         {
-                            //delete all  boxes from left position. 
-                            if (box.X2 < i)
+                            //delete all  boxes from top position. 
+                            if (box.Y2 < j)
                                 boxesForChecking.Remove(box);
                             else
                                 //detect coords of first box for removing 
-                                startRemovingFrom = Math.Min(startRemovingFrom, box.X2);
+                                startRemovingFrom = Math.Min(startRemovingFrom, box.Y2);
                         }
                     }
                 }
                 // Console.WriteLine("i= "+i);
-                for (int j = 0; j < pixels.GetLength(1);)
+                for (int i = 0; i < pixels.GetLength(0); )
                 {
+
 
                     var minX = width;
                     var minY = height;
@@ -59,21 +72,21 @@ namespace TextRecognition
                         if (intersectedBox != null)
                         {
                             //skip  box pixels
-                            j = intersectedBox.Y2 + 1;
+                            i = intersectedBox.X2 + 1;
                             continue;
                         }
                         var m = i;
                         var k = j;
                         var prevm = 0;
                         var prevk = 0;
-                        var prevDirection = Direction.North;
+                        var prevDirection = Direction.SouthWest;
 
                         do
                         {
                             prevm = m;
                             prevk = k;
 
-                            // pixels[prevm,prevk].PaintGreen();
+                            
                             var coords = GetNextPoint(pixels, m, k, prevDirection);
 
 
@@ -90,38 +103,45 @@ namespace TextRecognition
                         //move to next pixel until we back to start position 
                         while ((i != m || j != k));
                         //skip pixel in box
-                        j = maxY + 1;
+                        i = maxX + 1;
 
                         //filter for too big or too small boxes
-                        if (maxX - minX < 10 || maxY - minY < 10 || maxX - minX > 300 || maxY - minY > 300)
-
+                        var discardBox = false;
+                        if (args.AndFilterStrategy)
+                            discardBox = maxX - minX < args.MinWidth && maxY - minY < args.MinHeight ||
+                                         maxX - minX > args.MaxWidth && maxY - minY > args.MaxHeight;
+                        else
+                            discardBox = maxX - minX < args.MinWidth || maxY - minY < args.MinHeight ||
+                                     maxX - minX > args.MaxWidth || maxY - minY > args.MaxHeight;
+                        if (discardBox)
                             continue;
-                        var boxX1 = minX > 0 ? minX - 1 : 0;
-                        var boxY1 = minY > 0 ? minY - 1 : 0;
+                        var boxX1 = minX > 0 ? minX  : 0;
+                        var boxY1 = minY > 0 ? minY  : 0;
                         var boxX2 = maxX >= width ? width - 1 : maxX;
                         var boxY2 = maxY >= height ? height - 1 : maxY;
                         var box = new Box { X1 = boxX1, X2 = boxX2, Y1 = boxY1, Y2 = boxY2 };
                         Boxes.Enqueue(box);
+                        args.BoxDetectCallback?.Invoke(pixels,box);
                         boxesForChecking.Add(box);
 
                         //only for visualization
-                        Task.Factory.StartNew(() =>
-                        {
-                            //Console.WriteLine("Count= " + Boxes.Count);
-                            for (int boundX = boxX1; boundX <= boxX2; boundX++)
-                            {
-                                pixels[boundX, boxY1].PaintGreen();
-                                pixels[boundX, boxY2].PaintGreen();
-                            }
-                            for (int boundY = boxY1; boundY <= boxY2; boundY++)
-                            {
-                                pixels[boxX1, boundY].PaintGreen();
-                                pixels[boxX2, boundY].PaintGreen();
-                            }
-                        });
+                        //Task.Factory.StartNew(() =>
+                        //{
+                        //    //Console.WriteLine("Count= " + Boxes.Count);
+                        //    for (int boundX = boxX1; boundX <= boxX2; boundX++)
+                        //    {
+                        //        pixels[boundX, boxY1].PaintGreen();
+                        //        pixels[boundX, boxY2].PaintGreen();
+                        //    }
+                        //    for (int boundY = boxY1; boundY <= boxY2; boundY++)
+                        //    {
+                        //        pixels[boxX1, boundY].PaintGreen();
+                        //        pixels[boxX2, boundY].PaintGreen();
+                        //    }
+                        //});
                     }
                     else
-                        j++;
+                        i++;
 
                 }
             }

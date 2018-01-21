@@ -47,6 +47,16 @@ namespace TextRecognition
         {
             return Blue == 0 && Green == 0 && Red == 255;
         }
+
+        public void PaintWhite()
+        {
+            Blue = Green = Red = 255;
+        }
+
+        public override string ToString()
+        {
+            return $"R={Red},B={Blue},G={Green}";
+        }
     }
 
 }

@@ -4,10 +4,107 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextRecognition"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Button Height="20" Width="20" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Image x:Name="img" SnapsToDevicePixels="True" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="HighQuality"/>
+        d:DataContext="{d:DesignInstance local:ViewModel}"
+        Title="MainWindow" Height="350" Width="525" >
+    
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+        <DataTemplate DataType="{x:Type local:BoxViewModel}">
+            <Image Margin="3" ToolTip="{Binding Path=Box}"
+                   Source="{Binding Path=Image}"
+                   
+                   Height="{Binding Path=Box.Height}" 
+                   Width="{Binding Path=Box.Width}">
+                <Image.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Save as" Command="{Binding SaveBox}"/>
+                    </ContextMenu>
+                </Image.ContextMenu>
+                </Image>
+        </DataTemplate>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10,0,2,0"></Setter>
+        </Style>
+        <Style TargetType="{x:Type telerik:RadNumericUpDown}">
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Margin" Value="0,5"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Orientation="Horizontal" >
+            <TextBox Width="150" Height="25" Text="{Binding Path=FileName}" IsReadOnly="True" IsReadOnlyCaretVisible="True" />
+            <Button Height="20" Content="Open" Command="{Binding Path=SelectFileCommand}"/>
+            <TextBlock Margin="10,0,0,0" Text="Black level"/>
+            <TextBlock Text="R="/>
+            <telerik:RadNumericUpDown Minimum="0" Maximum="255" Value="{Binding Path=RedLevel}"/>
+            <TextBlock Text="G="/>
+            <telerik:RadNumericUpDown Minimum="0" Maximum="255" Value="{Binding Path=GreenLevel}"/>
+            <TextBlock Text="B="/>
+            <telerik:RadNumericUpDown Minimum="0" Maximum="255" Value="{Binding Path=BlueLevel}"/>
+            <TextBlock Text="Use Noise Filter"/>
+            <CheckBox VerticalAlignment="Center" IsChecked="{Binding Path=UseNoizeFilter}"/>
+            <telerik:RadNumericUpDown Minimum="0" Maximum="100" IsEnabled="{Binding Path=UseNoizeFilter}" Value="{Binding Path=NoisePercent}"/>
+            <Button Content="Preview" Height="25" Command="{Binding PreviewBlackAndWhitefilterCommand}"></Button>
+            <TextBlock Margin="10,0,0,0" ><Run Text="Box Size"/> <Run Text="Min Width"/></TextBlock>
+            <telerik:RadNumericUpDown Minimum="0" Maximum="10000" Value="{Binding Path=MinWidth}"/>
+            <TextBlock Text="Min Height"/>
+            <telerik:RadNumericUpDown Minimum="0" Maximum="10000" Value="{Binding Path=MinHeight}"/>
+            <TextBlock Text="Max Width"/>
+            <telerik:RadNumericUpDown Minimum="0" Maximum="10000" Value="{Binding Path=MaxWidth}"/>
+            <TextBlock Text="Max Height"/>
+            <telerik:RadNumericUpDown Minimum="0" Maximum="10000" Value="{Binding Path=MaxHeight}"/>
+            <TextBlock Text="And Filter strategy"/>
+            <CheckBox IsThreeState="False" VerticalAlignment="Center" IsChecked="{Binding Path=AndFilterStrategy}" />
+
+
+            <Button Height="20" Margin="20,5,5,5"  Content="Start" Command="{Binding Path=StartCommand}"
+                    />
+            <Button Height="20" Margin="5"  Content="Stop" Command="{Binding Path=StopCommand}"
+                    />
+            <Ellipse Height="15" Width="15" Fill="LightSeaGreen" Visibility="{Binding IsRunning,Converter={StaticResource BooleanToVisibilityConverter}}" Margin="5"></Ellipse>
+            <TextBlock Text="Found="/>
+            <TextBlock Text="{Binding Path=Boxes.Count}"/>
+            <TextBlock Text="Ellapsed"/>
+            <TextBlock Text="{Binding Path=Ellapsed,StringFormat={}{0:mm\\:ss\\.ffff}}"></TextBlock>
+        </WrapPanel>
+       
+        <TabControl Grid.Row="1">
+        <TabItem Header="PayCheck">
+            <DockPanel LastChildFill="True">
+                <telerik:RadSlider x:Name="Slider" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Minimum="0" Maximum="2.0" Value="1.0"/>
+                    <ScrollViewer x:Name="ScrollViewer" PreviewMouseWheel="ScrollViewer_OnPreviewMouseWheel"
+                                   HorizontalScrollBarVisibility="Visible" DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Visible">
+                    <Image 
+                        Source="{Binding Path=ImageSource,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" SnapsToDevicePixels="True" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="HighQuality">
+                        <Image.LayoutTransform>
+                            <ScaleTransform x:Name="ScaleTransform" CenterX="0.5" CenterY="0.5"
+                                            ScaleY="{Binding ElementName=Slider,Path=Value,UpdateSourceTrigger=PropertyChanged}"
+                                            ScaleX="{Binding ElementName=Slider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
+                        </Image.LayoutTransform>
+                    </Image>
+                </ScrollViewer>
+               
+            </DockPanel>
+        </TabItem>
+        <TabItem x:Name="BoxTab" Header="Boxes">
+            <ScrollViewer>
+                    <ListBox  x:Name="BoxHost" ItemsSource="{Binding Boxes}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            </ScrollViewer>
+        </TabItem>
+    </TabControl>
     </Grid>
 </Window>

@@ -13,5 +13,12 @@ namespace TextRecognition
     /// </summary>
     public partial class App : Application
     {
+        private void App_OnStartup(object sender, StartupEventArgs e)
+        {
+            var window=new MainWindow();
+            var vm=new ViewModel(window.Dispatcher);
+            window.DataContext = vm;
+            window.Show();
+        }
     }
 }
